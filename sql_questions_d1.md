@@ -1,4 +1,4 @@
-# sql_questions
+# sql_questions 
 
 1. What are Entities and Relationships
 
