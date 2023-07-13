@@ -1,4 +1,4 @@
-#Questions
+# Questions
 
 ## 1. What is the difference between DELETE and TRUNCATE statements?
 DELETE is used to delete one or more tuples of a table. With the help of the "DELETE" command, we can either delete all the rows in
