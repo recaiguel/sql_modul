@@ -27,4 +27,6 @@ the table has to start with letter or underscore.
 
 6. How do I rename a column?
 
-in the gui of ssms when you open the database folder
+At the left side in the gui of ssms, there is a box which contains an explorer for the neccessary database directories.
+Open the database directory, then the table directory and now when you open the tables there you can see the columns and
+you can rename them.
