@@ -1,0 +1,68 @@
+--Exercise 1
+CREATE DATABASE PracticeDB;
+
+--Exercise 2
+CREATE TABLE table1 (A varchar(255) Primary key, B int);
+
+CREATE TABLE table2 (C int Identity(50,1), D varchar(255) default 'z');
+
+--Exercise 3
+CREATE TABLE table3 (
+	 A varchar(255), 
+	 E char ,
+	 F int, 
+	 Primary key (A,E) , 
+	 Foreign key(A) references table1(A)
+	 );
+
+--Exercise 4
+CREATE TABLE countries (
+	 country_id int,
+	 country_name varchar(255),
+	 region_id int
+	 );
+
+--Exercise 5
+CREATE TABLE locations (
+	 country_id int, 
+	 city varchar(255), 
+	 state_province varchar(255),
+	 location_id int, 
+	 region_id int
+	 );
+
+--Exercise 6
+EXEC sp_rename 'countries', 'country_new';
+
+--Exercise 7
+ALTER TABLE locations ADD region_id int;
+
+--Exercise 8
+ALTER TABLE locations ADD  ID int;
+
+--creating new table with the right column order
+SELECT ID, country_id, city, state_province, location_id, region_id 
+INTO locations_new FROM locations;
+
+--delete old table and renaming new table to old table
+DROP TABLE locations;
+
+EXEC sp_rename 'locations_new', 'locations';
+
+--Exercise 9
+ALTER TABLE locations ALTER COLUMN country_id int;
+
+--Exercise 10
+DROP COLUMN city FROM locations;
+
+--Exercise 11
+EXEC sp_rename 'state_province', 'state';
+
+--Exercise 12
+ALTER TABLE locations ADD PRIMARY KEY (location_id);
+
+--Exercise 13
+ALTER TABLE locations ADD PRIMARY KEY (location_id, country_id);
+
+--Exercise 14
+ALTER TABLE locations DROP CONSTRAINT location_id, country_id;
